@@ -1,0 +1,5 @@
+FROM amazoncorretto:22.0.1-alpine3.19
+VOLUME /tmp
+EXPOSE 8290
+COPY springBootDocker/target/*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]

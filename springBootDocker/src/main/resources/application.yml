@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: springBootDocker
+  profiles:
+    active:
+    - prod
+
+server:
+  port: 8290

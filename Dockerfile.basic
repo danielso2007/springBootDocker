@@ -1,0 +1,8 @@
+FROM amazoncorretto:22.0.1-alpine3.19
+RUN addgroup -S demo && adduser -S demo -G demo
+USER demo
+VOLUME /tmp
+ARG JAR_FILE
+EXPOSE 8290
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]

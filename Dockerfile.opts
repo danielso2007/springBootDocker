@@ -1,0 +1,6 @@
+FROM amazoncorretto:22.0.1-alpine3.19
+VOLUME /tmp
+EXPOSE 8290
+ARG JAR_FILE=springBootDocker/target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["sh", "-c", "java ${JAVA_OPTS} -jar /app.jar"]
